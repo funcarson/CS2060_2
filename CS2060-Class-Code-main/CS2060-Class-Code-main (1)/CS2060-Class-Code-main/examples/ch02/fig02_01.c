@@ -3,9 +3,40 @@
 #include <stdio.h>
 
 // function main begins program execution 
-int main( void )
+int main(void)
 {
-   printf( "Welcome to C!\n" );
+	//Declares the variables
+	double length = 0;
+	double width = 0;
+	double area = 0;
+	double average = 0;
+
+
+	//Welcomes the user and asks for the length
+	printf("Welcome to C!\n");
+	puts("Enter the length");
+
+	//Gets the input
+	scanf("%d", &length);
+
+	//Asks for the width
+	puts("Enter the width");
+
+	//Gets the input
+	scanf("%d", &width);
+
+	//Calculates the area
+	area = length * width;
+
+	//Displays the area
+	printf("The area is: %d\n", area);
+
+	//Divides the length by the width
+	average = length / width;
+
+	//displays the average
+	printf("The average is: %.1f\n", average);
+	return 0;
 } // end function main 
 
 
