@@ -18,6 +18,14 @@ int main( void )
       printf( "%s", "Enter result ( 1=pass,2=fail ): " );
       scanf( "%d", &result );
 
+      //Tests if the input is valid
+      while (result != 1 && result !=2) {
+
+          printf("%s", "Incorrect answer, please enter result ( 1=pass,2=fail ): ");
+          scanf("%d", &result);
+
+      }//End of while loop
+
       // if result 1, increment passes 
       if ( result == 1 ) {     
          passes = passes + 1;
