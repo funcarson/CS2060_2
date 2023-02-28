@@ -15,24 +15,34 @@ int main ()
 	int calcHouseNum2 = 0;
 	int *houseNumPtr = &houseNum;
 	
+	//Prints the house num
 	printf("houseNum %d\n", houseNum);
 
+	//Prints the address of the base variable
 	printf("&houseNum %p\n\n", &houseNum);
 
+	//Prints pointer variable address
 	printf ("*houseNumPtr  %d\n", *houseNumPtr);
 
+	//Prints pointer variable
 	printf ("houseNumPtr %p\n\n", houseNumPtr);
 
+	//Prints pointer variable address
 	printf ("&houseNumPtr %p\n\n", &houseNumPtr);
 
+	//Calulates houseNum1
 	calcHouseNum1 =  *houseNumPtr + *houseNumPtr;
 
+	//Prints the calculated house number
 	printf("*houseNumPtr + *houseNumPtr is %d\n\n", calcHouseNum1);
 
+	//gets Housenum2
 	calcHouseNum2 = 2 * (*houseNumPtr);
 
+	//Prints housenum2
 	printf("2 * (*houseNumPtr) is %d\n\n", calcHouseNum2);
 
+	//Prints the housenumPtr address twice
 	printf("\n&*houseNumPtr = %p"
 		"\n*&houseNumPtr = %p\n", &*houseNumPtr, *&houseNumPtr);
 			
