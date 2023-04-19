@@ -45,12 +45,12 @@ typedef struct {
 //Prototypes
 void setUpOrganization(Organization* org1);
 void displayOrganizationCreation(Organization org);
-bool emailValid(char email[]);
-bool passwordIsValid(char password[]);
+bool emailValid(char* email[]);
+bool passwordIsValid(char* password[]);
 void organizationIntro(Organization org);
 bool getDonation(Organization* org);
 void finalSummary(Organization org);
-bool validateZipCode(char zipCode[]);
+bool validateZipCode(char* zipCode[]);
 void displayReceipt(const char* orgName, double donation);
 void addEOL(char* str);
 bool validateDouble(const char*stringInputPtr, double *outputPtr, int min);
@@ -156,8 +156,11 @@ void setUpOrganization(Organization* org) {
        puts("Enter email address ");
        fgets(tempEmail, LENGTH, stdin);
    
+       //Creates a pointer
+       char(*tempEmailPtr)[LENGTH] = &tempEmail;
+
        //Checks if email is valid
-       isValid = emailValid(tempEmail);
+       isValid = emailValid(tempEmailPtr);
        counter++;
        if (isValid) {
            strcpy(org->repEmail, tempEmail);
@@ -174,8 +177,12 @@ void setUpOrganization(Organization* org) {
         //Gets password
         puts("Enter password");
         fgets(tempPassword, LENGTH, stdin);
+
+        //Creates a pointer
+        char(*tempPasswordPtr)[LENGTH] = &tempPassword;
+
         //Checks if email is valid
-        isValid = passwordIsValid(tempPassword);
+        isValid = passwordIsValid(tempPasswordPtr);
         counter++;
         if (isValid) {
             strcpy(org->repPassword, tempPassword);
@@ -188,7 +195,7 @@ void setUpOrganization(Organization* org) {
 
 }//End of setUpOrganization
 
-bool emailValid(char email[]) {
+bool emailValid(char* email[]) {
     
 
     //Creates the Loop
@@ -296,7 +303,7 @@ bool emailValid(char email[]) {
 
         return isValid;
 }//End of method
-bool passwordIsValid(char password[]) {
+bool passwordIsValid(char* password[]) {
         
      //Creates temp variables
      int passNumber = 0;
@@ -461,9 +468,10 @@ bool getDonation(Organization* org) {
                 while (!isValid) {
                     puts("Enter your 5 digit zipcode");
                     fgets(zipCode, LENGTH, stdin);
-
+                    
+                    char(*zipCodePtr)[LENGTH] = &zipCode;
                     //Checks if the goal is valid
-                    isValid = validateZipCode(zipCode);
+                    isValid = validateZipCode(zipCodePtr);
                 }
 
                 //When zipcode is correct, the processing fee is calculated and totals are added
@@ -495,7 +503,7 @@ void finalSummary(Organization org) {
 
 
 //Start of get zipcode
-bool validateZipCode(char zipCode[]) {
+bool validateZipCode(char* zipCode[]) {
     //Creates some temp variables
     bool isValid = false;
     
