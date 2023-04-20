@@ -929,7 +929,7 @@ char* createFolderPath(const char* folderPath, const char* fileSuffix, char orgN
     strcpy(filePath, folderPath);
     strcat(filePath, fileName);
     strcat(filePath, fileSuffix);
-    printf("%s\n", filePath);
+    puts("");
 
     //Returns the file path
     return filePath;
