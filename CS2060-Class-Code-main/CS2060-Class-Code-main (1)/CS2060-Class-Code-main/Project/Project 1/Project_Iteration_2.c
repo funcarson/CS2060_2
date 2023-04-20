@@ -937,11 +937,6 @@ char* createFolderPath(const char* folderPath, const char* fileSuffix, char orgN
 
 //Sorts the orgs in alphabetical order
 void sortOrgs(Node** head) {
-    // Check if the list is empty
-    if (*head == NULL) {
-        return;
-    }
-
     //Initialize variables
     int swapped;
     Node* ptr1 = NULL;
