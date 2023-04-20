@@ -270,7 +270,7 @@ bool emailValid(char email[]) {
         
 
     //Gets the length
-    int len = strlen(email);
+    int len = (int)strlen(email);
 
     //Creates counters for the verification checks
     int atCounter = 0;
@@ -370,7 +370,7 @@ bool passwordIsValid(char password[]) {
      bool validPassword = false;
 
      //gets password length
-     int length = strlen(password);
+     int length = (int)strlen(password);
         
      //Checks for the correct password length
      if (length >= PASSWORDLENGTH) {
@@ -609,7 +609,7 @@ bool validateZipCode(char zipCode[]) {
      int numCounter = 0;
 
      //Gets the zipcode length
-     int length = strlen(zipCode);
+     int length = (int)strlen(zipCode);
 
      //Checks if its a valid integer and the amount of characters at the same time
      for (int i = 0; i < length; i++) {
@@ -709,7 +709,7 @@ void displayReceipt(char orgName[], double donation) {
 
 //End of line character method
 void addEOL(char* str) {
-    int len = strlen(str);
+    int len = (int)strlen(str);
     str[len] = '\n';
     str[len + 1] = '\0';
 }
