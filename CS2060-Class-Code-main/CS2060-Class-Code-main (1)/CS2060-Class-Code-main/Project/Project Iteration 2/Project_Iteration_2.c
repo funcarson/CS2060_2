@@ -485,7 +485,7 @@ bool getDonation(Organization* org) {
 
                 //If the emails are the same
                 if (strcmp(userEmail, org->repEmail) == 0) {
-                    while (passwordCounter <= 2) {
+                    while (passwordCounter < PASSLIMIT) {
 
                         //Gets the password
                         puts("Enter your password");
@@ -495,8 +495,8 @@ bool getDonation(Organization* org) {
                         if (strcmp(userPassword, org->repPassword) == 0) {
                             endProgram = true;
                             isValid = true;
-                            passwordCounter = 3;
-                            emailCounter = 3;
+                            passwordCounter = PASSLIMIT;
+                            emailCounter = EMAILLIMIT;
                         }
                         else {
                             puts("Incorrect Password please try again");
